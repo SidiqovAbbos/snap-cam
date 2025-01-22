@@ -2,7 +2,11 @@ name: Release
 
 on:
   push:
-    branches: [main]
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -12,16 +16,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Git Version
-        id: version
-        uses: codacy/git-version@2.8.0
-
       - name: Create Release
-        uses: actions/create-release@v1
+        uses: actions/create-release@latest
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          tag_name: ${{ steps.version.outputs.version }}
-          release_name: Release ${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
