@@ -1,24 +1,97 @@
-# NgxSnapCam
+# ngx-snap-cam
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+A lightweight, customizable Angular camera component for capturing photos directly from the browser.
 
-## Code scaffolding
+[![npm version](https://badge.fury.io/js/ngx-snap-cam.svg)](https://www.npmjs.com/package/ngx-snap-cam)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Run `ng generate component component-name --project ngx-snap-cam` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-snap-cam`.
-> Note: Don't forget to add `--project ngx-snap-cam` or else it will be added to the default project in your `angular.json` file. 
+## Features
 
-## Build
+- 📸 Easy photo capture
+- 🎨 Customizable snap button
+- 📱 Front/rear camera support
+- 🖼️ Configurable resolution
+- 🎯 Standalone component
+- 💪 TypeScript support
 
-Run `ng build ngx-snap-cam` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Publishing
+```bash
+npm install ngx-snap-cam
+```
 
-After building your library with `ng build ngx-snap-cam`, go to the dist folder `cd dist/ngx-snap-cam` and run `npm publish`.
+## Usage
 
-## Running unit tests
+```typescript
+import { NgxSnapCamComponent } from 'ngx-snap-cam';
 
-Run `ng test ngx-snap-cam` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@Component({
+  // ...
+  imports: [NgxSnapCamComponent],
+  // ...
+})
+```
 
-## Further help
+### Basic Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```html
+<ngx-snap-cam 
+  [facingMode]="'user'"
+  [idealX]="1200"
+  [idealY]="700"
+  (snapTaken)="onPhotoTaken($event)">
+</ngx-snap-cam>
+```
+
+### Custom Snap Button
+
+```html
+<ngx-snap-cam (snapTaken)="onPhotoTaken($event)">
+  <ng-template #customButton let-snap>
+    <button (click)="snap()">Custom Snap Button</button>
+  </ng-template>
+</ngx-snap-cam>
+```
+
+## API Reference
+
+### Inputs
+
+| Input      | Type                | Default    | Description                        |
+|------------|---------------------|------------|------------------------------------|
+| facingMode | 'user'/'environment'| 'user'     | Camera facing mode                 |
+| idealX     | number              | 1200       | Ideal width of the camera output   |
+| idealY     | number              | 700        | Ideal height of the camera output  |
+
+### Outputs
+
+| Output     | Type                | Description                          |
+|------------|---------------------|--------------------------------------|
+| snapTaken  | string              | Emits base64 encoded image when snap is taken |
+
+## Example
+
+```typescript
+export class AppComponent {
+  onPhotoTaken(photoData: string) {
+    console.log('Photo taken:', photoData);
+    // Handle the photo data (base64 string)
+  }
+}
+```
+
+## Browser Support
+
+Works in all modern browsers that support the WebRTC API:
+- Chrome
+- Firefox
+- Safari
+- Edge
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
