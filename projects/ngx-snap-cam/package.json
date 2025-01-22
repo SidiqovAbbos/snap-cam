@@ -1,6 +1,31 @@
 {
   "name": "ngx-snap-cam",
   "version": "0.0.1",
+  "description": "A lightweight Angular component for capturing photos using device camera with customizable UI",
+  "keywords": [
+    "angular",
+    "camera",
+    "webcam",
+    "photo",
+    "capture",
+    "snapshot",
+    "typescript",
+    "web-camera",
+    "ngx",
+    "component"
+  ],
+  "author": {
+    "name": "Abbos Sidiqov",
+    "email": "abbosidiqov@outlook.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SidiqovAbbos/snap-cam"
+  },
+  "bugs": {
+    "url": "https://github.com/SidiqovAbbos/snap-cam/issues"
+  },
+  "homepage": "https://github.com/SidiqovAbbos/snap-cam#readme",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^18.2.0",

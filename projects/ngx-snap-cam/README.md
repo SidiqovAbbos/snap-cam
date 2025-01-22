@@ -14,6 +14,10 @@ A lightweight, customizable Angular camera component for capturing photos direct
 - 🎯 Standalone component
 - 💪 TypeScript support
 
+## Demo
+
+Try it out: [Live Demo](https://sidiqovabbos.github.io/snap-cam)
+
 ## Installation
 
 ```bash

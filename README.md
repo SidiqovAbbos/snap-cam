@@ -1,27 +1,71 @@
 # SnapCam
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Angular camera component for capturing photos directly from the browser.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Easy to integrate web camera functionality
+- Capture photos with a single click
+- Customizable camera settings
+- Responsive design
+- Cross-browser support
 
-## Code scaffolding
+## Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Check out the [Live Demo](https://sidiqovabbos.github.io/snap-cam)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install ngx-snap-cam
+```
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Import the NgxSnapCamComponent in your app.module.ts:
+```typescript
+import { NgxSnapCamComponent } from 'ngx-snap-cam';
 
-## Running end-to-end tests
+@NgModule({
+  imports: [NgxSnapCamComponent]
+})
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Use the component in your template:
+```html
+<ngx-snap-cam (snapTaken)="onPhotoCaptured($event)"></ngx-snap-cam>
+```
 
-## Further help
+## Development
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project contains:
+- Main demo application
+- `ngx-snap-cam` library package
+
+### Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build library
+npm run build:lib
+
+# Build demo app
+npm run build
+```
+
+### API Documentation
+
+For detailed API documentation, please visit the [library documentation](./projects/ngx-snap-cam/README.md).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+MIT
